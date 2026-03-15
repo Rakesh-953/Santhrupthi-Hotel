@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santhrupthii Hotel – Nati Style South Indian Nonveg, RR Nagar Bengaluru</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Kannada&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --forest:  #0d2010;
+    --leaf:    #1a3d1f;
+    --moss:    #2e5e35;
+    --lime:    #6daa5a;
+    --yellow:  #e8c84a;
+    --cream:   #faf5e8;
+    --bone:    #ede4cc;
+    --rust:    #b84c1a;
+    --tan:     #c9a96e;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--forest); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 40px;
+    background: rgba(13,32,16,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(109,170,90,0.2);
+  }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--yellow); line-height: 1.1; }
+  .nav-logo span { display: block; font-size: 10px; letter-spacing: 3px; color: rgba(250,245,232,0.45); font-weight: 300; font-family: 'DM Sans', sans-serif; text-transform: uppercase; margin-top: 1px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { color: rgba(250,245,232,0.7); text-decoration: none; font-size: 13px; letter-spacing: 0.3px; transition: color .2s; }
+  .nav-links a:hover { color: var(--yellow); }
+  .nav-cta { background: var(--rust); color: #fff; padding: 10px 20px; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; transition: background .2s; }
+  .nav-cta:hover { background: #d05520; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 100px 40px 80px; position: relative; overflow: hidden;
+    background: var(--forest);
+  }
+  .hero-texture {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 55% 60% at 80% 50%, rgba(46,94,53,0.5) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 40% at 10% 80%, rgba(109,170,90,0.15) 0%, transparent 55%),
+      linear-gradient(170deg, #0d2010 0%, #152a18 60%, #0d2010 100%);
+  }
+  .hero-dots {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(109,170,90,0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 660px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(109,170,90,0.15); border: 1px solid rgba(109,170,90,0.3);
+    padding: 6px 16px; border-radius: 30px; font-size: 12px;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--lime);
+    margin-bottom: 30px;
+  }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--lime); }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 7.5vw, 90px);
+    font-weight: 900; line-height: 0.95; letter-spacing: -2px;
+    color: var(--cream); margin-bottom: 24px;
+  }
+  .hero-title .kannada {
+    font-family: 'Tiro Kannada', serif;
+    display: block; font-size: clamp(22px, 3.5vw, 40px);
+    color: var(--yellow); font-weight: 400; letter-spacing: 0px;
+    margin-bottom: 4px; line-height: 1.3;
+  }
+  .hero-title em { color: var(--lime); font-style: italic; }
+  .hero-desc { font-size: 15px; color: rgba(250,245,232,0.65); line-height: 1.8; max-width: 440px; margin-bottom: 36px; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-green { background: var(--moss); color: var(--cream); padding: 14px 28px; border-radius: 4px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background .2s; }
+  .btn-green:hover { background: var(--lime); color: var(--forest); }
+  .btn-ghost { border: 1px solid rgba(250,245,232,0.25); color: var(--bone); padding: 14px 28px; border-radius: 4px; font-size: 14px; text-decoration: none; transition: all .2s; }
+  .btn-ghost:hover { border-color: var(--yellow); color: var(--yellow); }
+  .hero-right {
+    position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
+    z-index: 2; display: flex; flex-direction: column; gap: 16px;
+  }
+  .hero-stat {
+    background: rgba(26,61,31,0.8); border: 1px solid rgba(109,170,90,0.2);
+    padding: 16px 20px; border-radius: 10px; text-align: right;
+    backdrop-filter: blur(8px); min-width: 160px;
+  }
+  .hero-stat .n { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 700; color: var(--yellow); line-height: 1; }
+  .hero-stat .l { font-size: 11px; color: rgba(250,245,232,0.45); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+
+  /* MARQUEE STRIP */
+  .marquee-strip {
+    background: var(--yellow); padding: 12px 0; overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 22s linear infinite;
+    font-family: 'Fraunces', serif; font-size: 15px; font-weight: 700;
+    color: var(--forest); letter-spacing: 0.5px;
+  }
+  .marquee-inner span { margin: 0 24px; }
+  .marquee-inner span::before { content: '✦'; margin-right: 24px; font-size: 10px; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* SECTION */
+  section { padding: 90px 40px; }
+  .sec-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--moss); margin-bottom: 10px; font-weight: 500; }
+  .sec-title { font-family: 'Fraunces', serif; font-size: clamp(30px, 4vw, 50px); font-weight: 700; line-height: 1.1; letter-spacing: -1px; color: var(--forest); margin-bottom: 14px; }
+  .sec-sub { font-size: 15px; color: #4a6b4f; line-height: 1.7; max-width: 480px; }
+
+  /* ABOUT */
+  .about { background: #f0ead6; }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .about-img {
+    height: 440px; border-radius: 12px; overflow: hidden;
+    background: linear-gradient(135deg, var(--leaf) 0%, var(--moss) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 80px; position: relative;
+  }
+  .about-img::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(109,170,90,0.05) 19px); }
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 30px; }
+  .feature { background: #fff; border: 1px solid rgba(46,94,53,0.12); border-radius: 8px; padding: 14px 16px; }
+  .feature .f-icon { font-size: 20px; margin-bottom: 6px; }
+  .feature .f-title { font-size: 13px; font-weight: 500; color: var(--forest); margin-bottom: 3px; }
+  .feature .f-desc { font-size: 11px; color: #6b8b70; line-height: 1.5; }
+  .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+  .ic { background: #fff; border: 1px solid rgba(46,94,53,0.1); border-radius: 8px; padding: 14px; }
+  .ic-l { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8aaa8e; margin-bottom: 5px; }
+  .ic-v { font-size: 13px; color: var(--forest); font-weight: 500; line-height: 1.4; }
+  .ic-v a { color: var(--moss); text-decoration: none; }
+
+  /* MENU */
+  .menu-section { background: var(--forest); }
+  .menu-section .sec-label { color: var(--lime); }
+  .menu-section .sec-title { color: var(--cream); }
+  .menu-section .sec-sub { color: rgba(250,245,232,0.55); }
+  .menu-top { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 44px; max-width: 1100px; margin-left: auto; margin-right: auto; }
+  .mtabs { display: flex; gap: 4px; background: rgba(26,61,31,0.6); padding: 4px; border-radius: 6px; border: 1px solid rgba(109,170,90,0.15); }
+  .mtab { padding: 8px 16px; border-radius: 4px; font-size: 12px; cursor: pointer; color: rgba(250,245,232,0.45); background: transparent; border: none; font-family: 'DM Sans', sans-serif; transition: all .2s; }
+  .mtab.active { background: var(--moss); color: var(--cream); }
+  .mgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; max-width: 1100px; margin: 0 auto; }
+  .mcard { background: var(--leaf); border: 1px solid rgba(109,170,90,0.12); border-radius: 10px; overflow: hidden; transition: transform .2s, border-color .2s; }
+  .mcard:hover { transform: translateY(-4px); border-color: rgba(109,170,90,0.35); }
+  .mcard-img { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 48px; background: linear-gradient(135deg, #0d2010 0%, #1a3d1f 100%); }
+  .mcard-body { padding: 15px 16px 18px; }
+  .mcard-name { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 700; color: var(--cream); margin-bottom: 5px; }
+  .mcard-desc { font-size: 11px; color: rgba(250,245,232,0.5); line-height: 1.6; margin-bottom: 12px; }
+  .mcard-foot { display: flex; align-items: center; justify-content: space-between; }
+  .mprice { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 700; color: var(--yellow); }
+  .mspice { font-size: 11px; color: var(--lime); }
+  .badge-pop { display: inline-block; background: rgba(184,76,26,0.3); border: 1px solid rgba(184,76,26,0.5); color: #f08060; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+
+  /* REVIEWS */
+  .reviews { background: #f0ead6; }
+  .reviews-inner { max-width: 1100px; margin: 0 auto; }
+  .rating-row { display: flex; align-items: center; gap: 50px; margin-bottom: 56px; flex-wrap: wrap; }
+  .big-num { font-family: 'Fraunces', serif; font-size: 90px; font-weight: 900; color: var(--forest); line-height: 1; letter-spacing: -4px; }
+  .stars-row { color: #e8a030; font-size: 20px; letter-spacing: 3px; margin-bottom: 6px; }
+  .rating-lbl { font-size: 13px; color: #6b8b70; }
+  .rbars { display: flex; flex-direction: column; gap: 8px; flex: 1; max-width: 280px; }
+  .rbar { display: flex; align-items: center; gap: 10px; }
+  .rbar span:first-child { font-size: 12px; color: #6b8b70; width: 12px; text-align: right; }
+  .rtrack { flex: 1; height: 6px; background: rgba(46,94,53,0.12); border-radius: 3px; overflow: hidden; }
+  .rfill { height: 100%; background: var(--moss); border-radius: 3px; }
+  .rbar span:last-child { font-size: 11px; color: #8aaa8e; width: 28px; }
+  .rgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+  .rcard { background: #fff; border: 1px solid rgba(46,94,53,0.1); border-radius: 10px; padding: 20px 22px; transition: box-shadow .2s; }
+  .rcard:hover { box-shadow: 0 4px 20px rgba(13,32,16,0.08); }
+  .rtop { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .ravatar { width: 36px; height: 36px; border-radius: 50%; background: var(--moss); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .rname { font-size: 14px; font-weight: 500; color: var(--forest); }
+  .rdate { font-size: 11px; color: #8aaa8e; margin-top: 1px; }
+  .rstars { color: #e8a030; font-size: 12px; margin-bottom: 8px; }
+  .rtext { font-size: 13px; color: #4a6b4f; line-height: 1.7; font-style: italic; }
+  .rtext::before { content: '"'; font-family: 'Fraunces', serif; font-size: 22px; color: var(--moss); line-height: 0; vertical-align: -8px; margin-right: 3px; }
+
+  /* HOURS */
+  .hours { background: var(--cream); }
+  .hours-inner { max-width: 780px; margin: 0 auto; }
+  .hgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 38px; }
+  .hrow { display: flex; justify-content: space-between; align-items: center; padding: 13px 16px; border-radius: 8px; background: #f0ead6; border: 1px solid rgba(46,94,53,0.1); }
+  .hrow.today { background: rgba(46,94,53,0.08); border-color: rgba(46,94,53,0.35); }
+  .hday { font-size: 13px; color: #4a6b4f; font-weight: 500; }
+  .hrow.today .hday { color: var(--moss); font-weight: 700; }
+  .htime { font-size: 13px; color: var(--forest); }
+  .hnote { margin-top: 24px; padding: 14px 18px; background: rgba(46,94,53,0.06); border: 1px solid rgba(46,94,53,0.15); border-radius: 8px; font-size: 13px; color: #4a6b4f; line-height: 1.6; }
+  .hnote a { color: var(--moss); text-decoration: none; }
+
+  /* LOCATION */
+  .location { background: #f0ead6; }
+  .location-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .map-box {
+    height: 360px; background: var(--cream); border-radius: 10px;
+    border: 1px solid rgba(46,94,53,0.15);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 14px; text-decoration: none; transition: border-color .2s; cursor: pointer;
+  }
+  .map-box:hover { border-color: rgba(46,94,53,0.5); }
+  .map-pin { font-size: 44px; }
+  .map-text { text-align: center; }
+  .map-text strong { display: block; font-size: 15px; color: var(--forest); margin-bottom: 4px; font-weight: 500; }
+  .map-text span { font-size: 13px; color: #6b8b70; }
+  .map-open { font-size: 12px; color: var(--moss); margin-top: 8px; letter-spacing: 0.5px; }
+  .clist { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 26px; }
+  .clist li { display: flex; gap: 12px; align-items: flex-start; }
+  .cicon { width: 34px; height: 34px; background: rgba(46,94,53,0.1); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+  .ctext { font-size: 13px; color: #4a6b4f; line-height: 1.5; }
+  .ctext strong { display: block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8aaa8e; margin-bottom: 3px; }
+  .ctext a { color: var(--moss); text-decoration: none; }
+  .dir-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; background: var(--moss); color: var(--cream); padding: 12px 22px; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; transition: background .2s; }
+  .dir-btn:hover { background: var(--lime); color: var(--forest); }
+
+  /* ORDER CTA */
+  .order-cta { background: var(--leaf); padding: 70px 40px; text-align: center; }
+  .order-cta h2 { font-family: 'Fraunces', serif; font-size: clamp(26px, 4vw, 44px); font-weight: 700; color: var(--cream); margin-bottom: 10px; letter-spacing: -1px; }
+  .order-cta p { font-size: 15px; color: rgba(250,245,232,0.6); margin-bottom: 28px; }
+  .order-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .ob-primary { background: var(--yellow); color: var(--forest); padding: 13px 26px; border-radius: 4px; font-size: 13px; font-weight: 700; text-decoration: none; transition: opacity .2s; }
+  .ob-primary:hover { opacity: 0.88; }
+  .ob-sec { background: rgba(250,245,232,0.1); border: 1px solid rgba(250,245,232,0.2); color: var(--bone); padding: 13px 26px; border-radius: 4px; font-size: 13px; text-decoration: none; transition: background .2s; }
+  .ob-sec:hover { background: rgba(250,245,232,0.18); }
+
+  /* FOOTER */
+  footer { background: var(--forest); padding: 44px 40px; border-top: 1px solid rgba(109,170,90,0.12); }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .f-logo { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 700; color: var(--yellow); }
+  .f-logo span { display: block; font-size: 10px; letter-spacing: 2px; color: rgba(250,245,232,0.3); font-weight: 300; font-family: 'DM Sans', sans-serif; text-transform: uppercase; margin-top: 2px; }
+  .f-links { display: flex; gap: 22px; }
+  .f-links a { font-size: 12px; color: rgba(250,245,232,0.35); text-decoration: none; }
+  .f-links a:hover { color: var(--lime); }
+  .f-copy { font-size: 11px; color: rgba(250,245,232,0.25); }
+
+  /* CALL POPUP */
+  #callPopup { display: none; position: absolute; top: 62px; right: 40px; background: #fff; border-radius: 10px; padding: 20px 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); z-index: 200; min-width: 230px; text-align: center; }
+  #callPopup .cp-label { font-size: 11px; color: #8aaa8e; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  #callPopup .cp-num { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; color: var(--forest); letter-spacing: 1px; margin-bottom: 4px; }
+  #callPopup .cp-hrs { font-size: 11px; color: #aaa; margin-bottom: 14px; }
+  #callPopup a.cp-dial { display: block; background: var(--rust); color: #fff; padding: 10px; border-radius: 6px; font-size: 13px; font-weight: 500; text-decoration: none; margin-bottom: 8px; }
+  #callPopup button.cp-close { background: none; border: none; font-size: 12px; color: #aaa; cursor: pointer; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .hero-eyebrow { animation: fadeUp .5s ease both; }
+  .hero-title    { animation: fadeUp .55s .1s ease both; }
+  .hero-desc     { animation: fadeUp .55s .2s ease both; }
+  .hero-btns     { animation: fadeUp .55s .3s ease both; }
+  .hero-right    { animation: fadeUp .55s .4s ease both; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    section { padding: 64px 20px; }
+    .hero { padding: 90px 20px 60px; }
+    .hero-right { display: none; }
+    .about-inner { grid-template-columns: 1fr; gap: 36px; }
+    .location-inner { grid-template-columns: 1fr; }
+    .hgrid { grid-template-columns: 1fr; }
+    .menu-top { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .rating-row { gap: 24px; }
+    footer { padding: 34px 20px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    #callPopup { right: 20px; }
+    .order-cta { padding: 56px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Santhrupthii <span>Hotel · RR Nagar · Bengaluru</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#hours">Hours</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+  <a href="tel:+918041234567" class="nav-cta" id="callBtn" onclick="handleCall(event)">📞 Call Us</a>
+  <div id="callPopup">
+    <div class="cp-label">Call us on</div>
+    <div class="cp-num">080-4123 4567</div>
+    <div class="cp-hrs">Open Tue–Sun · 7 am – 11 pm</div>
+    <a href="tel:+918041234567" class="cp-dial">Dial now</a>
+    <button class="cp-close" onclick="document.getElementById('callPopup').style.display='none'">Close</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-texture"></div>
+  <div class="hero-dots"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Nati Style · South Indian Nonveg · RR Nagar</div>
+    <h1 class="hero-title">
+      <span class="kannada">ಸಂತೃಪ್ತಿ ಹೋಟೆಲ್</span>
+      <em>Santhrupthii</em><br>Hotel
+    </h1>
+    <p class="hero-desc">Authentic nati style South Indian non-veg food — garlic chicken, ragi mudde, kaal soup, and biryani that tastes like home cooking. Right near Kanakadasa Shooting Circle, RR Nagar.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-green">Explore Menu</a>
+      <a href="#location" class="btn-ghost">Get Directions</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat"><div class="n">3.9★</div><div class="l">Google Rating</div></div>
+    <div class="hero-stat"><div class="n">3,500+</div><div class="l">Reviews</div></div>
+    <div class="hero-stat"><div class="n">₹200–450</div><div class="l">Per Person</div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span>Garlic Chicken</span><span>Ragi Mudde</span><span>Kaal Soup</span><span>Chicken Biryani</span><span>Mutton Chops</span><span>Anjal Tawa Fry</span><span>Pepper Chicken</span><span>Chicken Kebab</span><span>Liver Fry</span><span>Bangada Fry</span><span>Nati Style</span><span>Family Restaurant</span>
+    <span>Garlic Chicken</span><span>Ragi Mudde</span><span>Kaal Soup</span><span>Chicken Biryani</span><span>Mutton Chops</span><span>Anjal Tawa Fry</span><span>Pepper Chicken</span><span>Chicken Kebab</span><span>Liver Fry</span><span>Bangada Fry</span><span>Nati Style</span><span>Family Restaurant</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img">🍃</div>
+    <div>
+      <div class="sec-label">Our Story</div>
+      <h2 class="sec-title">Feels like Ajji Mane — right in the city</h2>
+      <p class="sec-sub" style="margin-bottom:14px;">Santhrupthii Hotel is a beloved nati style nonveg restaurant near Kanakadasa Shooting Circle on Double Road, RR Nagar. Known for its home-style cooking, generous portions, and the kind of warmth that makes you feel like you're at your grandmother's kitchen.</p>
+      <p class="sec-sub">Guests come for the garlic chicken and stay for the kaal soup. Every dish is cooked fresh, with real spices and no shortcuts. Budget-friendly, family-friendly, and always crowded — which tells you everything.</p>
+      <div class="features">
+        <div class="feature"><div class="f-icon">🌿</div><div class="f-title">Nati Style Cooking</div><div class="f-desc">Country chicken, traditional spices, no shortcuts</div></div>
+        <div class="feature"><div class="f-icon">👨‍👩‍👧</div><div class="f-title">Family Restaurant</div><div class="f-desc">Welcoming for all ages, spacious seating</div></div>
+        <div class="feature"><div class="f-icon">💰</div><div class="f-title">Budget Friendly</div><div class="f-desc">₹200–450 per person, great value</div></div>
+        <div class="feature"><div class="f-icon">🐟</div><div class="f-title">Fresh Seafood</div><div class="f-desc">Bangada, Anjal tawa fry — daily fresh</div></div>
+      </div>
+      <div class="info-cards">
+        <div class="ic"><div class="ic-l">Address</div><div class="ic-v">No.1227, 80 Feet Double Road, BEML 5th Stage, RR Nagar, Bengaluru 560098</div></div>
+        <div class="ic"><div class="ic-l">Near</div><div class="ic-v">Kanakadasa Shooting Circle</div></div>
+        <div class="ic"><div class="ic-l">Price range</div><div class="ic-v">₹200 – ₹450 per person</div></div>
+        <div class="ic"><div class="ic-l">Order online</div><div class="ic-v"><a href="https://www.zomato.com/bangalore/santhrupthii-hotel-rajarajeshwari-nagar" target="_blank">Zomato</a> · <a href="https://www.swiggy.com" target="_blank">Swiggy</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="menu-top">
+    <div>
+      <div class="sec-label">What We Serve</div>
+      <h2 class="sec-title" style="color:var(--cream)">Menu highlights</h2>
+    </div>
+    <div class="mtabs">
+      <button class="mtab active" onclick="filterMenu('all',this)">All</button>
+      <button class="mtab" onclick="filterMenu('chicken',this)">Chicken</button>
+      <button class="mtab" onclick="filterMenu('mutton',this)">Mutton</button>
+      <button class="mtab" onclick="filterMenu('seafood',this)">Seafood</button>
+      <button class="mtab" onclick="filterMenu('breakfast',this)">Breakfast</button>
+    </div>
+  </div>
+  <div class="mgrid" id="menuGrid">
+
+    <div class="mcard" data-cat="chicken">
+      <div class="mcard-img">🍗</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Garlic Chicken <span class="badge-pop">Must Try</span></div>
+        <div class="mcard-desc">The undisputed star of Santhrupthii — bold garlic masala, nati style, cooked dry. Guests order this every visit.</div>
+        <div class="mcard-foot"><div class="mprice">₹220</div><div class="mspice">🌶 Medium</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="chicken">
+      <div class="mcard-img">🍛</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Chicken Biryani</div>
+        <div class="mcard-desc">Fragrant nati style chicken biryani cooked with aromatic spices and ghee. Served with raita.</div>
+        <div class="mcard-foot"><div class="mprice">₹180</div><div class="mspice">🌶 Medium</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="chicken">
+      <div class="mcard-img">🥩</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Pepper Chicken</div>
+        <div class="mcard-desc">Rustic dry chicken with whole peppercorns and curry leaves. A nati classic done right.</div>
+        <div class="mcard-foot"><div class="mprice">₹210</div><div class="mspice">🌶🌶 Spicy</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="chicken">
+      <div class="mcard-img">🍢</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Chicken Kebab</div>
+        <div class="mcard-desc">Juicy 5-piece kebabs marinated in house spices. Rich, smoky, and perfectly charred.</div>
+        <div class="mcard-foot"><div class="mprice">₹200</div><div class="mspice">🌶 Medium</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="chicken">
+      <div class="mcard-img">🍲</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Chicken Chops</div>
+        <div class="mcard-desc">Tender chicken chops in a spicy masala gravy. Great with roti or steamed rice.</div>
+        <div class="mcard-foot"><div class="mprice">₹230</div><div class="mspice">🌶🌶 Spicy</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="mutton">
+      <div class="mcard-img">🐑</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Mutton Biryani <span class="badge-pop">Fan Fav</span></div>
+        <div class="mcard-desc">Soft naati mutton cooked with ghee and whole spices. The kind guests drive across town for.</div>
+        <div class="mcard-foot"><div class="mprice">₹260</div><div class="mspice">🌶 Medium</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="mutton">
+      <div class="mcard-img">🍖</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Mutton Chops</div>
+        <div class="mcard-desc">Spicy, juicy chops in a thick gravy. Rich bone-in mutton with a deep masala base.</div>
+        <div class="mcard-foot"><div class="mprice">₹280</div><div class="mspice">🌶🌶 Spicy</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="mutton">
+      <div class="mcard-img">🫀</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Boti Fry</div>
+        <div class="mcard-desc">Tender mutton boti (intestine) dry fry with spices — a bold nati delicacy for adventurous palates.</div>
+        <div class="mcard-foot"><div class="mprice">₹240</div><div class="mspice">🌶🌶 Spicy</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="seafood">
+      <div class="mcard-img">🐟</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Anjal Tawa Fry <span class="badge-pop">Fresh Daily</span></div>
+        <div class="mcard-desc">Seer fish tawa fried with coastal masala. Crispy outside, juicy inside, served sizzling hot.</div>
+        <div class="mcard-foot"><div class="mprice">₹300</div><div class="mspice">🌶 Medium</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="seafood">
+      <div class="mcard-img">🐡</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Bangada Fry</div>
+        <div class="mcard-desc">Mackerel marinated in traditional red masala and shallow fried. A coastal Karnataka favourite.</div>
+        <div class="mcard-foot"><div class="mprice">₹180</div><div class="mspice">🌶 Medium</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="breakfast">
+      <div class="mcard-img">🥣</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Ragi Mudde & Kaal Soup <span class="badge-pop">Must Try</span></div>
+        <div class="mcard-desc">Perfect ragi balls — no lumps, steaming hot — with a bone broth kaal soup that guests have two cups of.</div>
+        <div class="mcard-foot"><div class="mprice">₹80</div><div class="mspice">Mild</div></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cat="breakfast">
+      <div class="mcard-img">🫀</div>
+      <div class="mcard-body">
+        <div class="mcard-name">Liver Fry</div>
+        <div class="mcard-desc">Chicken liver cooked with spices and onions. A protein-rich nati morning staple.</div>
+        <div class="mcard-foot"><div class="mprice">₹120</div><div class="mspice">🌶 Medium</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <div class="sec-label">What Guests Say</div>
+    <h2 class="sec-title">3,500+ reviews</h2>
+    <div class="rating-row">
+      <div class="big-num">3.9</div>
+      <div>
+        <div class="stars-row">★★★★☆</div>
+        <div class="rating-lbl">Based on 3,574 Google reviews</div>
+      </div>
+      <div class="rbars">
+        <div class="rbar"><span>5</span><div class="rtrack"><div class="rfill" style="width:50%"></div></div><span>50%</span></div>
+        <div class="rbar"><span>4</span><div class="rtrack"><div class="rfill" style="width:25%"></div></div><span>25%</span></div>
+        <div class="rbar"><span>3</span><div class="rtrack"><div class="rfill" style="width:13%"></div></div><span>13%</span></div>
+        <div class="rbar"><span>2</span><div class="rtrack"><div class="rfill" style="width:6%"></div></div><span>6%</span></div>
+        <div class="rbar"><span>1</span><div class="rtrack"><div class="rfill" style="width:6%"></div></div><span>6%</span></div>
+      </div>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="rtop"><div class="ravatar">SM</div><div><div class="rname">Sujatha Bangera</div><div class="rdate">3 years · Regular</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">We like all types of non-veg items. Whenever we visit Rajarajeshwari Nagar, we never forget to visit Santhrupthi Hotel. It's a must-visit every time.</div>
+      </div>
+      <div class="rcard">
+        <div class="rtop"><div class="ravatar" style="background:#3B6D11;">AK</div><div><div class="rname">Arjun K</div><div class="rdate">2 months ago</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">Garlic chicken is a must try here and even roti and chicken sukka! Complete nati style — felt like home food. Didn't feel heavy after eating so much!</div>
+      </div>
+      <div class="rcard">
+        <div class="rtop"><div class="ravatar" style="background:#854F0B;">PR</div><div><div class="rname">Preethi R</div><div class="rdate">1 month ago</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">Kaal soup was out of the world. Had the right amount of infusion and was not very spicy. Had two cups without leg pieces. Ragi mudde was perfect — steaming hot, no lumps.</div>
+      </div>
+      <div class="rcard">
+        <div class="rtop"><div class="ravatar" style="background:#534AB7;">VN</div><div><div class="rname">Vijay Nair</div><div class="rdate">3 weeks ago</div></div></div>
+        <div class="rstars">★★★★☆</div>
+        <div class="rtext">It was crowded on Friday afternoon — always the sign of good food. Ambience feels just like ajji mane in villages! Mutton biryani was very yum, soft meat cooked in ghee.</div>
+      </div>
+      <div class="rcard">
+        <div class="rtop"><div class="ravatar" style="background:#993C1D;">LM</div><div><div class="rname">Latha M</div><div class="rdate">2 weeks ago</div></div></div>
+        <div class="rstars">★★★★★</div>
+        <div class="rtext">One of the must-try places in Rajarajeshwari Nagar. Chicken biryani, garlic chicken, pepper chicken, kebab — all excellent. Decent place for family and friends.</div>
+      </div>
+      <div class="rcard">
+        <div class="rtop"><div class="ravatar" style="background:#0F6E56;">RS</div><div><div class="rname">Ravi S</div><div class="rdate">1 week ago</div></div></div>
+        <div class="rstars">★★★★☆</div>
+        <div class="rtext">Nati style food with distinct flavours and excellent taste. Good quality and quantity, reasonable pricing, quick service. Clean ambiance most of the time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="hours" id="hours">
+  <div class="hours-inner">
+    <div class="sec-label">When We're Open</div>
+    <h2 class="sec-title">Opening hours</h2>
+    <p class="sec-sub">Open all week. Morning breakfast from 7 am, dinner till 11 pm.</p>
+    <div class="hgrid">
+      <div class="hrow today"><span class="hday">Monday</span><span class="htime">7:00 am – 11:00 pm</span></div>
+      <div class="hrow today"><span class="hday">Tuesday ← Today</span><span class="htime">7:00 am – 11:00 pm</span></div>
+      <div class="hrow"><span class="hday">Wednesday</span><span class="htime">7:00 am – 11:00 pm</span></div>
+      <div class="hrow"><span class="hday">Thursday</span><span class="htime">7:00 am – 11:00 pm</span></div>
+      <div class="hrow"><span class="hday">Friday</span><span class="htime">7:00 am – 11:00 pm</span></div>
+      <div class="hrow"><span class="hday">Saturday</span><span class="htime">7:00 am – 11:00 pm</span></div>
+      <div class="hrow"><span class="hday">Sunday</span><span class="htime">7:00 am – 11:00 pm</span></div>
+    </div>
+    <div class="hnote">Open 7 days a week. Call ahead on public holidays to confirm. Walk-ins welcome. Average visit: 30–45 minutes.</div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="location-inner">
+    <div>
+      <div class="sec-label">Find Us</div>
+      <h2 class="sec-title">Near Shooting Circle, RR Nagar</h2>
+      <p class="sec-sub">Easy to find on the 80 Feet Double Road, right near Kanakadasa Shooting Circle.</p>
+      <ul class="clist">
+        <li><div class="cicon">📍</div><div class="ctext"><strong>Address</strong>No.1227, 80 Feet Double Road, BEML 5th Stage, Rajarajeshwari Nagar, Bengaluru – 560098 (Near Kanakadasa Shooting Circle)</div></li>
+        <li><div class="cicon">🛵</div><div class="ctext"><strong>Order online</strong><a href="https://www.zomato.com/bangalore/santhrupthii-hotel-rajarajeshwari-nagar" target="_blank">Zomato</a> &nbsp;·&nbsp; <a href="https://www.swiggy.com" target="_blank">Swiggy</a> &nbsp;·&nbsp; <a href="https://www.justdial.com" target="_blank">JustDial</a></div></li>
+        <li><div class="cicon">🕐</div><div class="ctext"><strong>Hours</strong>Every day · 7:00 am – 11:00 pm</div></li>
+        <li><div class="cicon">💰</div><div class="ctext"><strong>Price for two</strong>₹400 – ₹900 approx.</div></li>
+      </ul>
+      <a href="https://maps.google.com/?q=Santhrupthii+Hotel+80+Feet+Double+Road+BEML+5th+Stage+Rajarajeshwari+Nagar+Bengaluru" target="_blank" class="dir-btn">↗ Open in Google Maps</a>
+    </div>
+    <a href="https://maps.google.com/?q=Santhrupthii+Hotel+80+Feet+Double+Road+BEML+5th+Stage+Rajarajeshwari+Nagar+Bengaluru" target="_blank" class="map-box">
+      <div class="map-pin">🗺️</div>
+      <div class="map-text">
+        <strong>Santhrupthii Hotel</strong>
+        <span>80 Feet Double Road, BEML 5th Stage<br>RR Nagar, Bengaluru 560098</span>
+      </div>
+      <div class="map-open">Tap to open in Google Maps →</div>
+    </a>
+  </div>
+</section>
+
+<!-- ORDER CTA -->
+<div class="order-cta">
+  <h2>Can't make it in? Order online</h2>
+  <p>Get your favourite garlic chicken and biryani delivered fresh to your door.</p>
+  <div class="order-btns">
+    <a href="https://www.zomato.com/bangalore/santhrupthii-hotel-rajarajeshwari-nagar" target="_blank" class="ob-primary">Order on Zomato</a>
+    <a href="https://www.swiggy.com" target="_blank" class="ob-sec">Order on Swiggy</a>
+    <a href="tel:+918041234567" class="ob-sec">📞 Call Us</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="f-logo">Santhrupthii Hotel <span>Nati Style · RR Nagar · Bengaluru</span></div>
+    <div class="f-links">
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#hours">Hours</a>
+      <a href="#location">Location</a>
+    </div>
+    <div class="f-copy">© 2026 Santhrupthii Hotel · 80 Feet Double Road, RR Nagar, Bengaluru</div>
+  </div>
+</footer>
+
+<script>
+function filterMenu(cat, btn) {
+  document.querySelectorAll('.mtab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.mcard').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+function handleCall(e) {
+  var isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
+  if (isMobile) return;
+  e.preventDefault();
+  var p = document.getElementById('callPopup');
+  p.style.display = p.style.display === 'none' ? 'block' : 'none';
+}
+document.addEventListener('click', function(e) {
+  var p = document.getElementById('callPopup');
+  var b = document.getElementById('callBtn');
+  if (p && !p.contains(e.target) && e.target !== b) p.style.display = 'none';
+});
+</script>
+</body>
+</html>
